@@ -27,7 +27,7 @@ As seguintes ferramentas serão utilizadas no decorrer deste Bootcamp:
 
 Vai dar um 👋🏽 pra gente no LinkedIn:
 
-- Babbi Oliveira [![Linkedin Badge](https://img.shields.io/badge/babboliveira?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/babboliveira/)
+- Babbi Oliveira [![Linkedin Badge](https://img.shields.io/badge/-babboliveira?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/babboliveira/)
 - Eveline Síntia
 - Fábio Monteiro [![Linkedin Badge](https://img.shields.io/badge/-fabiomrm-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabiomrm/)](https://www.linkedin.com/in/fabiomrm/)
 - Joara Paula
