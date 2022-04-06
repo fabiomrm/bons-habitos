@@ -6,7 +6,7 @@
 </p>
 
 </p>
-	Projeto BONS HÁBITOS, desenvolvido para rodar no console Java, como atividade de conclusão do módulo 01 do <a href="https://brazil.generation.org/">Bootcamp Generation Java Recifer</a>.
+	Projeto BONS HÁBITOS, desenvolvido para rodar no console Java, como atividade de conclusão do módulo 01 do <a href="https://brazil.generation.org/">Bootcamp Generation Java Recife</a>.
 </p>
 <h4 align="center"> 
 	⌛...Em progresso...⌛
