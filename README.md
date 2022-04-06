@@ -25,8 +25,11 @@ As seguintes ferramentas serão utilizadas no decorrer deste Bootcamp:
 
 ### Quem fez?
 
----
+Vai dar um 👋🏽 pra gente no LinkedIn:
 
-Feito por Fábio Monteiro 👋🏽 Entre em contato!
-
-[![Linkedin Badge](https://img.shields.io/badge/-fabiomrm-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabiomrm/)](https://www.linkedin.com/in/fabiomrm/)
+- Babbi Oliveira
+- Eveline Síntia
+- Fábio Monteiro [![Linkedin Badge](https://img.shields.io/badge/-fabiomrm-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabiomrm/)](https://www.linkedin.com/in/fabiomrm/)
+- Joara Paula
+- Kamila Lima [![Linkedin Badge](https://img.shields.io/badge/-kamila-lima-falcao-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabiomrm/)](https://www.linkedin.com/in/kamila-lima-falcao/)
+- Théo Nogueira [![Linkedin Badge](https://img.shields.io/badge/-théo-nogueira-dev-tecno400725208-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fabiomrm/)](https://www.linkedin.com/in/th%C3%A9o-nogueira-dev-tecno400725208/)
