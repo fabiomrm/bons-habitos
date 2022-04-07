@@ -3,27 +3,29 @@ package com.bonshabitos.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bonshabitos.enums.Theme;
+
 public class GoodHabit {
 
-	private String theme;
+	private Theme theme;
 	private List<String> attitudes = new ArrayList<>();
 	private List<String> suggestions = new ArrayList<>();
 
 	public GoodHabit() {
 	}
 
-	public GoodHabit(String theme, List<String> attitudes, List<String> suggestions) {
+	public GoodHabit(Theme theme, List<String> attitudes, List<String> suggestions) {
 		super();
 		this.theme = theme;
 		this.attitudes = attitudes;
 		this.suggestions = suggestions;
 	}
 
-	public String getTheme() {
+	public Theme getTheme() {
 		return theme;
 	}
 
-	public void setTheme(String theme) {
+	public void setTheme(Theme theme) {
 		this.theme = theme;
 	}
 

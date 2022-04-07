@@ -4,7 +4,6 @@ public class Person extends User {
 
 	private int age;
 	private String cpf;
-	private String email;
 	private Address address;
 
 	public Person() {
@@ -13,7 +12,7 @@ public class Person extends User {
 	public Person(String name, int age, String email, String cpf) {
 		super.setName(name);
 		this.age = age;
-		this.email = email;
+		super.setEmail(email);
 		this.cpf = cpf;
 
 	}
@@ -24,14 +23,6 @@ public class Person extends User {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getCpf() {
@@ -52,10 +43,11 @@ public class Person extends User {
 
 	@Override
 	public String toString() {
-		String s = "Nome: " + super.getName();
+		String s = "=====USUÁRIO=====";
+		s += "\nNome: " + super.getName();
 		s += "\nIdade: " + age;
 		s += "\nCPF: " + cpf;
-		s += "\nEmail: " + email;
+		s += "\nEmail: " + super.getEmail();
 
 		return s;
 	}
