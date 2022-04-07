@@ -21,10 +21,10 @@ public class GoodHabitFactory {
 		attitudes.add("Compro alimentos orgânicos");
 
 		List<String> suggestions = new ArrayList<>();
-		suggestions.add("Guia Alimentar de Dietas Vegetarianas para Adultos");
-		suggestions.add("Cowspiracy");
-		suggestions.add("Troque agrotóxicos por uma dose de felicidade");
-
+		suggestions.add("Leia Guia Alimentar de Dietas Vegetarianas para Adultos");
+		suggestions.add("Assista ao documentário Cowspiracy");
+		suggestions.add("Escute o podcast que Babbi vai indicar");
+		
 		GoodHabit goodHabit = new GoodHabit(Theme.ALIMENTACAO, attitudes, suggestions);
 
 		return goodHabit;

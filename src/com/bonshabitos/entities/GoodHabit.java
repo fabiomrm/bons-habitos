@@ -33,10 +33,6 @@ public class GoodHabit {
 		return attitudes;
 	}
 
-	public void setAttitudes(List<String> attitudes) {
-		this.attitudes = attitudes;
-	}
-
 	public List<String> getSuggestions() {
 		return suggestions;
 	}

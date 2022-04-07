@@ -13,7 +13,7 @@ public class Screen {
 	 */
 	public static void printGoodHabitsAttitudesList(List<GoodHabit> goodHabits) {
 		System.out.println("LISTA DE BONS HÁBITOS: ");
-
+		
 		int c = 0;
 		for (int i = 0; i < goodHabits.size(); i++) {
 			for (int j = 0; j < goodHabits.get(i).getAttitudes().size(); j++) {

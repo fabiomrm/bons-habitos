@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.bonshabitos.entities.GoodHabit;
 import com.bonshabitos.entities.Person;
+import com.bonshabitos.entities.User;
 import com.bonshabitos.utils.Formatter;
 import com.bonshabitos.utils.GoodHabitFactory;
 import com.bonshabitos.utils.Screen;
@@ -54,11 +55,7 @@ public class Main {
 		String email = sc.nextLine();
 
 		// Cria um OBJETO da CLASSE Person com os dados informados pelo usuário
-		Person p1 = new Person();
-		p1.setName(name);
-		p1.setAge(age);
-		p1.setEmail(email);
-		p1.setCpf(cpf);
+		Person p1 = new Person(name, age, email, cpf);
 		Screen.splitSign("-", 40);
 
 		System.out.println("Esses são seus dados iniciais: ");
@@ -78,12 +75,13 @@ public class Main {
 		goodHabits.add(GoodHabitFactory.createGoodHabitEconomiaCircular());
 		goodHabits.add(GoodHabitFactory.createGoodHabitConsumoConsciente());
 
-		// Agora a gente vai imprimir TODAS as ATITUDES que estão armazenadas nesta lista de GoodHabits
+		// Agora a gente vai imprimir TODAS as ATITUDES que estão armazenadas nesta
+		// lista de GoodHabits
 		Screen.printGoodHabitsAttitudesList(goodHabits);
 
 		System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
 		int choice = sc.nextInt();
-
+		
 		System.out.println("Você apertou : " + choice);
 
 		// No final de tudo a gente fecha o nosso scanner (boa prática)
