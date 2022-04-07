@@ -31,6 +31,7 @@ public class Main {
 			System.exit(0);
 		}
 
+		// USUÁRIO TOPOU PARTICIPAR
 		sc.nextLine();
 		System.out.println("BOA! Então lá vamos nós...");
 		System.out.print("\nMas antes de começar, digite seu nome: ");
@@ -44,14 +45,20 @@ public class Main {
 
 		sc.nextLine();
 
+		// Falta criar validador para o CPF
 		System.out.println("Entre com o seu CPF: ");
-		String identifier = sc.nextLine();
+		String cpf = sc.nextLine();
 
+		// Falta criar validador para EMAIL
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
 
 		// Cria um OBJETO da CLASSE Person com os dados informados pelo usuário
-		Person p1 = new Person(name, age, identifier, email);
+		Person p1 = new Person();
+		p1.setName(name);
+		p1.setAge(age);
+		p1.setEmail(email);
+		p1.setCpf(cpf);
 		Screen.splitSign("-", 40);
 
 		System.out.println("Esses são seus dados iniciais: ");
@@ -63,21 +70,21 @@ public class Main {
 		Screen.printExplanation();
 
 		// Cria uma lista VAZIA que vai esperar OBJETOS da CLASSE GoodHabit
-		List<GoodHabit> goodHabit = new ArrayList<>();
+		List<GoodHabit> goodHabits = new ArrayList<>();
 
-		// Adiciona os objetos GoodHabits nessa lista que a gente criou (olhar CLASSE GoodHabitFactory)
-		goodHabit.add(GoodHabitFactory.createGoodHabitAlimentacao());
-		goodHabit.add(GoodHabitFactory.createGoodHabitEconomiaCircular());
-		goodHabit.add(GoodHabitFactory.createGoodHabitConsumoConsciente());
-		
-		//Agora a gente vai imprimir TODAS as opções que estão armazenadas nesta lista
-		Screen.printGoodHabitsList(goodHabit);
-		
+		// Adiciona os objetos GoodHabits nessa lista que a gente criou (olhar CLASSE
+		// GoodHabitFactory)
+		goodHabits.add(GoodHabitFactory.createGoodHabitAlimentacao());
+		goodHabits.add(GoodHabitFactory.createGoodHabitEconomiaCircular());
+		goodHabits.add(GoodHabitFactory.createGoodHabitConsumoConsciente());
+
+		// Agora a gente vai imprimir TODAS as ATITUDES que estão armazenadas nesta lista de GoodHabits
+		Screen.printGoodHabitsAttitudesList(goodHabits);
+
 		System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
 		int choice = sc.nextInt();
-		
+
 		System.out.println("Você apertou : " + choice);
-		
 
 		// No final de tudo a gente fecha o nosso scanner (boa prática)
 		sc.close();

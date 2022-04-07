@@ -10,10 +10,10 @@ import com.bonshabitos.enums.Theme;
 public class GoodHabitFactory {
 
 	/*
-	 * Cada MÉTODO dessa classe vai criar um OBJETO da CLASSE GoodHabit
-	 * e depois vai retornar esse OBJETO
+	 * Cada MÉTODO dessa classe vai criar um OBJETO da CLASSE GoodHabit e depois vai
+	 * retornar esse OBJETO
 	 */
-	
+
 	public static GoodHabit createGoodHabitAlimentacao() {
 		List<String> attitudes = new ArrayList<>();
 		attitudes.add("Sou vegetariano");
@@ -25,9 +25,9 @@ public class GoodHabitFactory {
 		suggestions.add("Cowspiracy");
 		suggestions.add("Troque agrotóxicos por uma dose de felicidade");
 
-		GoodHabit gh = new GoodHabit(Theme.ALIMENTACAO, attitudes, suggestions);
+		GoodHabit goodHabit = new GoodHabit(Theme.ALIMENTACAO, attitudes, suggestions);
 
-		return gh;
+		return goodHabit;
 	}
 
 	public static GoodHabit createGoodHabitEconomiaCircular() {
@@ -38,9 +38,9 @@ public class GoodHabitFactory {
 				"Segue esses perfis de uns brechós massa: @dprafrente_brecho, @dbs_brecho, @brechodakombi",
 				"Site Enjoei");
 
-		GoodHabit gh = new GoodHabit(Theme.ECONOMIA_CIRCULAR, atittudes, suggestions);
+		GoodHabit goodHabit = new GoodHabit(Theme.ECONOMIA_CIRCULAR, atittudes, suggestions);
 
-		return gh;
+		return goodHabit;
 	}
 
 	public static GoodHabit createGoodHabitConsumoConsciente() {
@@ -49,9 +49,9 @@ public class GoodHabitFactory {
 				"Uso ecobags", "Uso eletrodomésticos com alta eficiência energética (Selo A - Procel)");
 		List<String> suggestions = Arrays.asList("O Custo Verdadeiro", "Obsolescência Programada");
 
-		GoodHabit gh = new GoodHabit(Theme.CONSUMO_CONSCIENTE, atittudes, suggestions);
+		GoodHabit goodHabit = new GoodHabit(Theme.CONSUMO_CONSCIENTE, atittudes, suggestions);
 
-		return gh;
+		return goodHabit;
 	}
 
 }

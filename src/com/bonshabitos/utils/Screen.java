@@ -11,8 +11,9 @@ public class Screen {
 	 * percorre com um LOOP FOR. Como cada OBJETO GoodHabit possui uma LISTA DE
 	 * ATITUDES, eu percorro essa lista e IMPRIMO cada valor da LISTA DE ATITUDES.
 	 */
-	public static void printGoodHabitsList(List<GoodHabit> goodHabits) {
+	public static void printGoodHabitsAttitudesList(List<GoodHabit> goodHabits) {
 		System.out.println("LISTA DE BONS HÁBITOS: ");
+
 		int c = 0;
 		for (int i = 0; i < goodHabits.size(); i++) {
 			for (int j = 0; j < goodHabits.get(i).getAttitudes().size(); j++) {
