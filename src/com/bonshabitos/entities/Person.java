@@ -14,7 +14,6 @@ public class Person extends User {
 		this.age = age;
 		super.setEmail(email);
 		this.cpf = cpf;
-
 	}
 
 	public int getAge() {

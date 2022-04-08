@@ -2,6 +2,7 @@ package com.bonshabitos.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import com.bonshabitos.enums.Theme;
 
@@ -12,6 +13,10 @@ public class GoodHabit {
 	private List<String> suggestions = new ArrayList<>();
 
 	public GoodHabit() {
+	}
+	
+	public GoodHabit(Theme theme) {
+		this.theme = theme;
 	}
 
 	public GoodHabit(Theme theme, List<String> attitudes, List<String> suggestions) {
@@ -39,6 +44,23 @@ public class GoodHabit {
 
 	public void setSuggestions(List<String> suggestions) {
 		this.suggestions = suggestions;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(theme);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		GoodHabit other = (GoodHabit) obj;
+		return theme == other.theme;
 	}
 
 }
