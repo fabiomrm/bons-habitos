@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.bonshabitos.entities.GoodHabit;
 import com.bonshabitos.entities.Person;
-import com.bonshabitos.enums.Theme;
+import com.bonshabitos.entities.goodhabits.CircularEconomyHabit;
+import com.bonshabitos.entities.goodhabits.FoodHabit;
+import com.bonshabitos.entities.goodhabits.GoodHabit;
 import com.bonshabitos.utils.Formatter;
 import com.bonshabitos.utils.GoodHabitFactory;
 import com.bonshabitos.utils.Screen;
@@ -86,45 +87,99 @@ public class Main {
 			if (choice > 0 && choice <= 3) {
 				GoodHabit gh = goodHabits.get(0);
 				String attitude = gh.getAttitudes().get(choice - 1);
+				List<String> suggestions = gh.getSuggestions();
 
 				if (!p1.hasGoodHabit(gh)) {
-					GoodHabit userGoodHabit = new GoodHabit(Theme.ALIMENTACAO);
+					GoodHabit userGoodHabit = new FoodHabit();
 					userGoodHabit.getAttitudes().add(attitude);
+
+					for (String suggestion : suggestions) {
+						userGoodHabit.getSuggestions().add(suggestion);
+					}
+
 					p1.getGoodHabits().add(userGoodHabit);
 				} else {
 					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
 					userGoodHabit.getAttitudes().add(attitude);
+
 				}
 			}
-			
+
 			else if (choice > 3 && choice <= 6) {
-				//IMPLEMENTAR LÓGICA
+				GoodHabit gh = goodHabits.get(1);
+				String attitude = gh.getAttitudes().get(choice - 4);
+				List<String> suggestions = gh.getSuggestions();
+
+				if (!p1.hasGoodHabit(gh)) {
+					GoodHabit userGoodHabit = new CircularEconomyHabit();
+					userGoodHabit.getAttitudes().add(attitude);
+
+					for (String suggestion : suggestions) {
+						userGoodHabit.getSuggestions().add(suggestion);
+					}
+
+					p1.getGoodHabits().add(userGoodHabit);
+				} else {
+					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
+					userGoodHabit.getAttitudes().add(attitude);
+
+				}
 			}
-			
+
 			else if (choice > 6 && choice <= 9) {
-				//IMPLEMENTAR LÓGICA
+				GoodHabit gh = goodHabits.get(1);
+				String attitude = gh.getAttitudes().get(choice - 7);
+				List<String> suggestions = gh.getSuggestions();
+
+				if (!p1.hasGoodHabit(gh)) {
+					GoodHabit userGoodHabit = new CircularEconomyHabit();
+					userGoodHabit.getAttitudes().add(attitude);
+
+					for (String suggestion : suggestions) {
+						userGoodHabit.getSuggestions().add(suggestion);
+					}
+
+					p1.getGoodHabits().add(userGoodHabit);
+				} else {
+					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
+					userGoodHabit.getAttitudes().add(attitude);
+
+				}
 			}
-			
+
 			System.out.println("Tem mais algum? [-1 PARA ENCERRAR]: ");
 			choice = sc.nextInt();
 		}
-		
+
 		Screen.splitSign("-", 40);
 		try {
-			for(int i=0; i < 5; i++) {				
+			for (int i = 0; i < 5; i++) {
 				System.out.println("Aguarde...");
 				Thread.sleep(1000);
 			}
-			
-			System.out.println("AGORA A GENTE IMPRIME O STATUS DE BONS HÁBITOS");
-			
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
-		} finally {
-			// No final de tudo a gente fecha o nosso scanner (boa prática)
-			sc.close();
 		}
 
+		System.out.println("AGORA A GENTE IMPRIME O STATUS DE BONS HÁBITOS");
+		System.out.println(p1);
+		for (GoodHabit gh : p1.getGoodHabits()) {
+			Screen.splitSign("-", 30);
+			System.out.print("TEMA: ");
+			System.out.print(gh.getTheme());
+			Screen.splitSign("-", 30);
+			System.out.println("ATIITUDES: ");
+			for (String attitude : gh.getAttitudes()) {
+				System.out.println(attitude);
+			}
+			System.out.println("SUGESTÕES: ");
+			for (String suggestion : gh.getSuggestions()) {
+				System.out.println(suggestion);
+			}
+			System.out.println("===================");
+		}
+
+		sc.close();
 
 	}
 

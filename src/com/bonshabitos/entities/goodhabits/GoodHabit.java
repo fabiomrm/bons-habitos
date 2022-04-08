@@ -1,4 +1,4 @@
-package com.bonshabitos.entities;
+package com.bonshabitos.entities.goodhabits;
 
 import java.util.ArrayList;
 import java.util.List;

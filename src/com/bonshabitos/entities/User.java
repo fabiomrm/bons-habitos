@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.bonshabitos.entities.goodhabits.GoodHabit;
 import com.bonshabitos.enums.Theme;
 
 public abstract class User {

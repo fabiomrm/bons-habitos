@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.bonshabitos.entities.GoodHabit;
-import com.bonshabitos.enums.Theme;
+import com.bonshabitos.entities.goodhabits.CircularEconomyHabit;
+import com.bonshabitos.entities.goodhabits.ConsciousConsumptionHabit;
+import com.bonshabitos.entities.goodhabits.FoodHabit;
+import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class GoodHabitFactory {
 
@@ -24,8 +26,8 @@ public class GoodHabitFactory {
 		suggestions.add("Leia Guia Alimentar de Dietas Vegetarianas para Adultos");
 		suggestions.add("Assista ao documentário Cowspiracy");
 		suggestions.add("Escute o podcast que Babbi vai indicar");
-		
-		GoodHabit goodHabit = new GoodHabit(Theme.ALIMENTACAO, attitudes, suggestions);
+
+		GoodHabit goodHabit = new FoodHabit(attitudes, suggestions);
 
 		return goodHabit;
 	}
@@ -36,9 +38,9 @@ public class GoodHabitFactory {
 				"Descarto de maneira adequada após uso");
 		List<String> suggestions = Arrays.asList("Dá uma olhada em empresas que são adeptas: Natura, L'oréal, Unilever",
 				"Segue esses perfis de uns brechós massa: @dprafrente_brecho, @dbs_brecho, @brechodakombi",
-				"Site Enjoei");
+				"Visita o site Enjoei");
 
-		GoodHabit goodHabit = new GoodHabit(Theme.ECONOMIA_CIRCULAR, atittudes, suggestions);
+		GoodHabit goodHabit = new CircularEconomyHabit(atittudes, suggestions);
 
 		return goodHabit;
 	}
@@ -49,7 +51,7 @@ public class GoodHabitFactory {
 				"Uso ecobags", "Uso eletrodomésticos com alta eficiência energética (Selo A - Procel)");
 		List<String> suggestions = Arrays.asList("O Custo Verdadeiro", "Obsolescência Programada");
 
-		GoodHabit goodHabit = new GoodHabit(Theme.CONSUMO_CONSCIENTE, atittudes, suggestions);
+		GoodHabit goodHabit = new ConsciousConsumptionHabit(atittudes, suggestions);
 
 		return goodHabit;
 	}

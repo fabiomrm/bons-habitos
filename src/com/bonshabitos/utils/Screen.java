@@ -2,7 +2,7 @@ package com.bonshabitos.utils;
 
 import java.util.List;
 
-import com.bonshabitos.entities.GoodHabit;
+import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class Screen {
 
@@ -13,7 +13,7 @@ public class Screen {
 	 */
 	public static void printGoodHabitsAttitudesList(List<GoodHabit> goodHabits) {
 		System.out.println("LISTA DE BONS HÁBITOS: ");
-		
+
 		int c = 0;
 		for (int i = 0; i < goodHabits.size(); i++) {
 			for (int j = 0; j < goodHabits.get(i).getAttitudes().size(); j++) {
@@ -27,8 +27,7 @@ public class Screen {
 	public static void printPresentation() {
 		System.out.println("BONS HÁBITOS");
 		System.out.println("Olá! Seja bem vinde ao projeto BONS HÁBITOS!");
-		System.out
-				.println("Nosso objetivo é mostrar como seus atos diários impactam positivamente o meu ambiente");
+		System.out.println("Nosso objetivo é mostrar como seus atos diários impactam positivamente o meu ambiente");
 		System.out.println(
 				"Ah! E de quebra, a gente vai te dar algumas sugestões pra continuar nessa pegada sustentável");
 		System.out.println();
@@ -49,6 +48,7 @@ public class Screen {
 	}
 
 	public static void splitSign(String str, int amount) {
+		System.out.println();
 		for (int i = 0; i < amount; i++) {
 			System.out.print(str);
 		}
