@@ -28,7 +28,7 @@ public class Screen {
 		System.out.println("BONS HÁBITOS");
 		System.out.println("Olá! Seja bem vinde ao projeto BONS HÁBITOS!");
 		System.out
-				.println("Nosso objetivo é mostrar como seus atos diários impactam positivamente para o meu ambiente");
+				.println("Nosso objetivo é mostrar como seus atos diários impactam positivamente o meu ambiente");
 		System.out.println(
 				"Ah! E de quebra, a gente vai te dar algumas sugestões pra continuar nessa pegada sustentável");
 		System.out.println();

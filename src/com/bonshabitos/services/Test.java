@@ -8,7 +8,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		String cpf = "52998224725";
-
+		int resto;
 		if (cpf.length() != 11) {
 			System.out.println("\nNúmero de cpf inválido: ");
 		} else {
@@ -21,6 +21,13 @@ public class Test {
 				contador--;
 			}
 			System.out.println(soma);
+			resto = soma * 10 % 11;
+			if (resto == 10) {
+				resto = 0;
+			}
+			if(resto == Integer.parseInt(vetor[9])) {
+				System.out.println("Valor do primeiro dígito validado!");
+			}
 		}
 
 	}
