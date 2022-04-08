@@ -2,9 +2,31 @@ package com.bonshabitos.utils;
 
 import java.util.List;
 
+import com.bonshabitos.entities.User;
 import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class Screen {
+
+	public static void printUserGoodHabitsStatus(User user) {
+		System.out.println("AGORA A GENTE IMPRIME O STATUS DE BONS HÁBITOS");
+		System.out.println(user);
+		for (GoodHabit gh : user.getGoodHabits()) {
+			Screen.splitSign("-", 30);
+			System.out.print("TEMA: ");
+			System.out.print(gh.getTheme());
+			Screen.splitSign("-", 30);
+			System.out.println("ATIITUDES: ");
+			for (String attitude : gh.getAttitudes()) {
+				System.out.println(attitude);
+			}
+			System.out.println("SUGESTÕES: ");
+			for (String suggestion : gh.getSuggestions()) {
+				System.out.println(suggestion);
+			}
+			System.out.println("===================");
+		}
+
+	}
 
 	/*
 	 * Nesse método a gente recebe uma LISTA com OBJETOS da CLASSE GoodHabit e
