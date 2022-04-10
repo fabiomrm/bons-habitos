@@ -24,8 +24,8 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Validator cpfValidator = new CpfValidator();
-		//Aqui vocês vão colocar Validator emailValidator = new emailValidator();
-		
+		// Aqui vocês vão colocar Validator emailValidator = new emailValidator();
+
 		Survey survey = new Survey("Atitudes das Pessoas");
 
 		Screen.printPresentation();
@@ -33,11 +33,11 @@ public class Main {
 		int response = 0;
 		while (response != 1 && response != 2) {
 			try {
+				System.out.println("Digite sua resposta: ");
 				response = sc.nextInt();
 			} catch (InputMismatchException e) {
 				System.out.println("Tipo de valor incorreto. Só pode ser 1 ou 2!");
 				sc.nextLine();
-				System.out.println("Vai lá, 1 ou 2? ");
 			}
 		}
 		if (response == 2) {
@@ -46,7 +46,8 @@ public class Main {
 		}
 		sc.nextLine();
 
-		//AQUI VOCÊS VÃO MUDAR o método getUserData pra receber também um emailValidator getUserData(sc, cpfValidator, emailValidator)
+		// AQUI VOCÊS VÃO MUDAR o método getUserData pra receber também um
+		// emailValidator getUserData(sc, cpfValidator, emailValidator)
 		Person p1 = getUserData(sc, cpfValidator);
 		survey.getParticipants().add(p1);
 
@@ -63,10 +64,13 @@ public class Main {
 
 		// FALTA IMPLEMENTAR AS OPÇÕES DO MENU. PODE SER AQUI MESMO. COMO FAZER
 		// 1. Pega lista de participantes da pesquisa (survey.getParticipants())
-		// 2. faz um loop FOR por ela e para cada participante coloca para imprimir (system.out...) [OPÇÃO 1]
-		// 3. faz um loop FOR por ela e para cada participante verifica se participante.getAge() é maior que a do outro [OPÇÃO 2]
-		// 4. mesma do 3 mas com participante.getScore() 
-		// Dica para 3 e 4 => existe uma interface chamada Comparable com um método compare (implementar na entidade Person)
+		// 2. faz um loop FOR por ela e para cada participante coloca para imprimir
+		// (system.out...) [OPÇÃO 1]
+		// 3. faz um loop FOR por ela e para cada participante verifica se
+		// participante.getAge() é maior que a do outro [OPÇÃO 2]
+		// 4. mesma do 3 mas com participante.getScore()
+		// Dica para 3 e 4 => existe uma interface chamada Comparable com um método
+		// compare (implementar na entidade Person)
 		System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
 		String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
 		for (String opcao : opcoes) {
@@ -84,7 +88,8 @@ public class Main {
 		return sc.nextInt();
 	}
 
-	//Com o validator email, esse método vai virar: getUserData(Scanner sc, Validator validator, Validator validator2)
+	// Com o validator email, esse método vai virar: getUserData(Scanner sc,
+	// Validator validator, Validator validator2)
 	public static Person getUserData(Scanner sc, Validator validator) {
 		System.out.print("Digite seu nome: ");
 		String name = sc.nextLine();
@@ -104,11 +109,11 @@ public class Main {
 			cpf = sc.nextLine();
 		}
 
-		//Aqui vem a lógica da validação de email (ver a de cima - cpf)
+		// Aqui vem a lógica da validação de email (ver a de cima - cpf)
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
 
-		//AQUI VEM A LÓGICA DE NÃO ACEITAR NADA QUE NÃO SEJA DE 1 A 6
+		// AQUI VEM A LÓGICA DE NÃO ACEITAR NADA QUE NÃO SEJA DE 1 A 6
 		System.out.println("Qual o seu gênero? ");
 		System.out.println("1- HOMEM-CIS");
 		System.out.println("2- HOMEM-TRANS");

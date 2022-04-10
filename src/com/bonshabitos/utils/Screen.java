@@ -7,6 +7,15 @@ import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class Screen {
 
+	public static void printSurveyResultMenu() {
+		// compare (implementar na entidade Person)
+				System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
+				String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
+				for (String opcao : opcoes) {
+					System.out.println(opcao);
+				}
+	}
+
 	public static void printUserGoodHabitsStatus(User user) {
 		System.out.println("AGORA A GENTE IMPRIME O STATUS DE BONS HÁBITOS");
 		System.out.println(user);
@@ -56,7 +65,6 @@ public class Screen {
 		System.out.println("E ai? Bora tirar teu EXTRATO DE BONS HÁBITOS? ");
 		System.out.println("1- Simbora!");
 		System.out.println("2- Tô fora...");
-		System.out.print("Digite sua resposta: ");
 	}
 
 	public static void printExplanation() {
