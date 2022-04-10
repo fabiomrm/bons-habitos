@@ -78,7 +78,7 @@ public class Main {
 	}
 
 	public static int askToRepeat(Scanner sc) throws InputMismatchException {
-		System.out.println("Muito obrigado por ter participado! Deseja fazer novamente?");
+		System.out.println("Muito obrigado por ter participado! Mais alguém deseja participar?");
 		System.out.println("1- Sim");
 		System.out.println("2- Não");
 		return sc.nextInt();
