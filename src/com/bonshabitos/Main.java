@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.bonshabitos.entities.Person;
+import com.bonshabitos.entities.PersonByAgeComparator;
+import com.bonshabitos.entities.PersonByScoreComparator;
 import com.bonshabitos.entities.Survey;
 import com.bonshabitos.entities.goodhabits.CircularEconomyHabit;
 import com.bonshabitos.entities.goodhabits.ConsciousConsumptionHabit;
@@ -71,14 +73,33 @@ public class Main {
 		// 4. mesma do 3 mas com participante.getScore()
 		// Dica para 3 e 4 => existe uma interface chamada Comparable com um método
 		// compare (implementar na entidade Person)
-		System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
-		String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
-		for (String opcao : opcoes) {
-			System.out.println(opcao);
-		}
+		
 
 		sc.close();
 
+	}
+
+	public static void handleMenuRequests(Scanner sc, Survey survey) {
+		Screen.printSurveyResultMenu();
+		int option = 0;
+		do {
+			List<Person> participants;
+			System.out.println("O que você deseja?");
+			option = sc.nextInt();
+			switch (option) {
+			case 1:
+				participants = survey.getParticipants();
+				System.out.println(participants);
+				break;
+			case 2:
+				participants = survey.sortPeopleByParameter(new PersonByAgeComparator());
+				System.out.println(participants);
+				break;
+			case 3:
+				participants = survey.sortPeopleByParameter(new PersonByScoreComparator());
+				System.out.println(participants);
+			}
+		} while (option > 0);
 	}
 
 	public static int askToRepeat(Scanner sc) throws InputMismatchException {

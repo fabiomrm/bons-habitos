@@ -1,6 +1,8 @@
 package com.bonshabitos.entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Survey {
@@ -24,6 +26,12 @@ public class Survey {
 	}
 
 	public List<Person> getParticipants() {
+		return participants;
+	}
+	
+	public List<Person> sortPeopleByParameter(Comparator<Person> comparator) {
+		Collections.sort(participants, comparator);
+		
 		return participants;
 	}
 
