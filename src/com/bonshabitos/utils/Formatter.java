@@ -17,4 +17,8 @@ public class Formatter {
 		return String.join(" ", formattedName);
 
 	}
+
+	public static String formatCpf(String cpf) {
+		return cpf.replaceAll("[^0-9]", ""); 
+	}
 }

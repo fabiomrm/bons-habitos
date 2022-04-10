@@ -23,9 +23,14 @@ public class GoodHabitFactory {
 		attitudes.add("Compro alimentos orgânicos");
 
 		List<String> suggestions = new ArrayList<>();
-		suggestions.add("Leia Guia Alimentar de Dietas Vegetarianas para Adultos");
-		suggestions.add("Assista ao documentário Cowspiracy");
-		suggestions.add("Escute o podcast que Babbi vai indicar");
+		suggestions.add("Leia Guia Alimentar de Dietas Vegetarianas para Adultos: " + Color.ANSI_CYAN + "www.svb.org.br"
+				+ Color.ANSI_RESET);
+		suggestions.add("Assista ao documentário A Carne é Fraca, disponível no seguinte link: " + Color.ANSI_CYAN
+				+ "https://www.youtube.com/watch?v=rrFsGTw5bCw" + Color.ANSI_RESET);
+		suggestions.add(
+				"Escute o episódio da série Politicamente Incorreto...e Ambiental Também, do podcast Modefica, chamado"
+						+ Color.ANSI_GREEN + " O Agronegócio, Amazônia em Chamas e Soberania Nacional"
+						+ Color.ANSI_RESET);
 
 		GoodHabit goodHabit = new FoodHabit(attitudes, suggestions);
 
@@ -36,9 +41,12 @@ public class GoodHabitFactory {
 
 		List<String> atittudes = Arrays.asList("Compro em brechós", "Reciclo e reuso",
 				"Descarto de maneira adequada após uso");
-		List<String> suggestions = Arrays.asList("Dá uma olhada em empresas que são adeptas: Natura, L'oréal, Unilever",
-				"Segue esses perfis de uns brechós massa: @dprafrente_brecho, @dbs_brecho, @brechodakombi",
-				"Visita o site Enjoei");
+
+		List<String> suggestions = new ArrayList<>();
+		suggestions.add("Dá uma olhada em empresas que são adeptas: Natura, L'oréal, Unilever");
+		suggestions.add("Segue esses perfis de uns brechós massa: " + Color.ANSI_PURPLE + Color.ANSI_WHITE_BACKGROUND
+				+ "@dprafrente_brecho, @dbs_brecho, @brechodakombi" + Color.ANSI_RESET);
+		suggestions.add("Visita o site Enjoei: " + Color.ANSI_CYAN + "https://www.enjoei.com.br/" + Color.ANSI_RESET);
 
 		GoodHabit goodHabit = new CircularEconomyHabit(atittudes, suggestions);
 
@@ -49,7 +57,11 @@ public class GoodHabitFactory {
 
 		List<String> atittudes = Arrays.asList("Compro apenas os alimentos que vou consumir/não desperdiço comida;",
 				"Uso ecobags", "Uso eletrodomésticos com alta eficiência energética (Selo A - Procel)");
-		List<String> suggestions = Arrays.asList("O Custo Verdadeiro", "Obsolescência Programada");
+		List<String> suggestions = new ArrayList<>();
+		suggestions.add("Assista ao documentário O Custo Verdadeiro");
+		suggestions.add("Assista ao documentário Obsolêscencia Programada");
+		suggestions.add("Da uma olhada no canal do youtube Menos 1 Lixo: " + Color.ANSI_CYAN
+				+ "www.youtube.com/c/Menos1LixoOficial" + Color.ANSI_RESET);
 
 		GoodHabit goodHabit = new ConsciousConsumptionHabit(atittudes, suggestions);
 

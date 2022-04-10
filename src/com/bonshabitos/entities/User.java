@@ -11,6 +11,7 @@ public abstract class User {
 
 	private String name;
 	private String email;
+	private int score = 0;
 	private List<GoodHabit> goodHabits = new ArrayList<>();
 
 	public User() {
@@ -42,6 +43,14 @@ public abstract class User {
 
 	public List<GoodHabit> getGoodHabits() {
 		return goodHabits;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public boolean hasGoodHabit(GoodHabit goodHabit) {
