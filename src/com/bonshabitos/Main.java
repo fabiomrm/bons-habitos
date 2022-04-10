@@ -104,6 +104,7 @@ public class Main {
 			cpf = sc.nextLine();
 		}
 
+		//Aqui vem a lógica da validação de email (ver a de cima - cpf)
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
 
