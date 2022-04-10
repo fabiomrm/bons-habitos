@@ -2,22 +2,35 @@ package com.bonshabitos.utils;
 
 import java.util.List;
 
+import com.bonshabitos.entities.Person;
 import com.bonshabitos.entities.User;
 import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class Screen {
 
+	public static void printSurveyResult(String title, List<Person> participants) {
+		StringBuffer sb = new StringBuffer();
+		sb.append(title.toUpperCase() + "\n");
+		int c = 0;
+		sb.append(c + " - " + "Nome " + "Idade " + "Pontuação \n");
+		for (Person participant : participants) {
+			sb.append("\n" + (c + 1) + "-" + participant.getName() + " " + participant.getAge() + " "
+					+ participant.getScore() + "\n");
+		}
+
+		System.out.print(sb.toString());
+	}
+
 	public static void printSurveyResultMenu() {
 		// compare (implementar na entidade Person)
-				System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
-				String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
-				for (String opcao : opcoes) {
-					System.out.println(opcao);
-				}
+		System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
+		String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
+		for (String opcao : opcoes) {
+			System.out.println(opcao);
+		}
 	}
 
 	public static void printUserGoodHabitsStatus(User user) {
-		System.out.println("AGORA A GENTE IMPRIME O STATUS DE BONS HÁBITOS");
 		System.out.println(user);
 		for (GoodHabit gh : user.getGoodHabits()) {
 			Screen.splitSign("-", 30);

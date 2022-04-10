@@ -28,10 +28,10 @@ public class Survey {
 	public List<Person> getParticipants() {
 		return participants;
 	}
-	
+
 	public List<Person> sortPeopleByParameter(Comparator<Person> comparator) {
 		Collections.sort(participants, comparator);
-		
+
 		return participants;
 	}
 

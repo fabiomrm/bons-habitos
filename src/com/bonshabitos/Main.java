@@ -64,16 +64,7 @@ public class Main {
 			} while (askToRepeat(sc) == 1);
 		}
 
-		// FALTA IMPLEMENTAR AS OPÇÕES DO MENU. PODE SER AQUI MESMO. COMO FAZER
-		// 1. Pega lista de participantes da pesquisa (survey.getParticipants())
-		// 2. faz um loop FOR por ela e para cada participante coloca para imprimir
-		// (system.out...) [OPÇÃO 1]
-		// 3. faz um loop FOR por ela e para cada participante verifica se
-		// participante.getAge() é maior que a do outro [OPÇÃO 2]
-		// 4. mesma do 3 mas com participante.getScore()
-		// Dica para 3 e 4 => existe uma interface chamada Comparable com um método
-		// compare (implementar na entidade Person)
-		
+		handleMenuRequests(sc, survey);
 
 		sc.close();
 
@@ -89,15 +80,18 @@ public class Main {
 			switch (option) {
 			case 1:
 				participants = survey.getParticipants();
-				System.out.println(participants);
+				Screen.printSurveyResult("padrão", participants);
 				break;
 			case 2:
 				participants = survey.sortPeopleByParameter(new PersonByAgeComparator());
-				System.out.println(participants);
+				Screen.printSurveyResult("ordenado por idade", participants);
 				break;
 			case 3:
 				participants = survey.sortPeopleByParameter(new PersonByScoreComparator());
-				System.out.println(participants);
+				Screen.printSurveyResult("ordenado por pontuação", participants);
+				break;
+			default:
+				System.out.println("Valor inválido");
 			}
 		} while (option > 0);
 	}
