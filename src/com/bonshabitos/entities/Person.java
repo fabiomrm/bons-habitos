@@ -4,7 +4,6 @@ public class Person extends User {
 
 	private int age;
 	private String cpf;
-	private Address address;
 
 	public Person() {
 	}
@@ -30,14 +29,6 @@ public class Person extends User {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 
 	@Override
