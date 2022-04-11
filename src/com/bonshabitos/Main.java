@@ -1,5 +1,6 @@
 package com.bonshabitos;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -31,6 +32,7 @@ public class Main {
 
 		Person author = new Person("Carla Siqueira", 32, "carla.siqueira@gmail.com", "11270258486",
 				Gender.FEMALE_TRANSGENDER);
+
 		Survey survey = new Survey("Boas Atitudes", author);
 
 		Screen.printPresentation();
@@ -67,6 +69,13 @@ public class Main {
 		}
 
 		handleMenuRequests(sc, survey);
+		try {
+			survey.generateSurveyFile();
+			System.out.println("Arquivo gerado com sucesso!");
+		} catch (IOException e) {
+			System.out.println("Houve um problema para gerar seu arquivo de pesquisa!");
+			e.printStackTrace();
+		}
 
 		sc.close();
 	}

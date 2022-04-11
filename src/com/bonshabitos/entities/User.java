@@ -9,25 +9,25 @@ import com.bonshabitos.enums.Theme;
 
 public abstract class User {
 
-	private Long id;
+	private static int ID_COUNTER = 0;
+
+	private int id;
 	private String name;
 	private String email;
 	private int score = 0;
 	private List<GoodHabit> goodHabits = new ArrayList<>();
 
 	public User() {
+		id = ID_COUNTER++;
 	}
 
 	public User(String name) {
 		this.name = name;
+		id = ID_COUNTER++;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {

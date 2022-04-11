@@ -9,11 +9,10 @@ public class Person extends User {
 	private Gender gender;
 
 	public Person() {
-		setId(getId() + 1);
+		super();
 	}
 
 	public Person(String name, int age, String email, String cpf, Gender gender) {
-		setId(getId() + 1);
 		super.setName(name);
 		this.age = age;
 		super.setEmail(email);
@@ -68,10 +67,11 @@ public class Person extends User {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Nome: " + getName());
-		sb.append("\nIdade: " + getAge());
+		sb.append("\nIdade: " + age);
 		sb.append("\nGênero: " + translateGender());
-		sb.append("\nCPF: " + getCpf());
+		sb.append("\nCPF: " + cpf);
 		sb.append("\nE-mail: " + getEmail());
+		sb.append("\nNº de atitudes: " + getScore());
 
 		return sb.toString();
 	}

@@ -1,13 +1,19 @@
 package com.bonshabitos.services;
 
+import com.bonshabitos.entities.Person;
+
 public class Test {
 
 	public static void main(String[] args) {
 
-		String name = "Fábio Marcone Rodrigues Monteiro";
+		Person fabio = new Person();
+		Person joana = new Person();
+		Person carla = new Person();
 		
-		name.substring(0, name.indexOf(" "));
-		System.out.println(name.subSequence(0, name.indexOf(" ")));
+		System.out.println(fabio.getId());
+		System.out.println(joana.getId());
+		System.out.println(carla.getId());
+		
 
 	}
 

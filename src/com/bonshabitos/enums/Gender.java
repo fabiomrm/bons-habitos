@@ -3,15 +3,23 @@ package com.bonshabitos.enums;
 public enum Gender {
 
 	MALE_CISGENDER(1), FEMALE_CISGENDER(2), MALE_TRANSGENDER(3), FEMALE_TRANSGENDER(4), NON_BINARY(5), OTHERS(6);
-	
+
 	private int value;
-	
+
 	Gender(int value) {
 		this.value = value;
 	}
-	
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
 	public static Gender valueOf(int value) {
-		switch(value) {
+		switch (value) {
 		case 1:
 			return Gender.MALE_CISGENDER;
 		case 2:
@@ -25,8 +33,8 @@ public enum Gender {
 		case 6:
 			return Gender.OTHERS;
 		}
-		
+
 		return Gender.OTHERS;
-	
+
 	}
 }
