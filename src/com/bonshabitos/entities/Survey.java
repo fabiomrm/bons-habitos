@@ -48,6 +48,10 @@ public class Survey {
 		return participants.size();
 	}
 
+	public int getTotalScore() {
+		return participants.stream().mapToInt(x -> x.getScore()).reduce(0, (sum, x) -> sum + x);
+	}
+
 	public double getAverageAge() {
 		return participants.stream().mapToDouble(x -> x.getAge()).reduce(0,
 				(sum, x) -> sum + x / getNumberOfParticipants());
@@ -65,7 +69,11 @@ public class Survey {
 
 		bw.write(title.toUpperCase());
 		bw.newLine();
-		bw.write("Author: " + author.getName());
+		bw.write("Criadora: " + author.getName());
+		bw.newLine();
+		bw.write("Nº Participantes: " + getNumberOfParticipants());
+		bw.newLine();
+		bw.write("Média de idade das pessoas participantes: " + getAverageAge());
 		bw.newLine();
 		for (Person participant : participants) {
 			bw.write(participant.extractFirstName() + "," + participant.getCpf() + "," + participant.getAge() + ","

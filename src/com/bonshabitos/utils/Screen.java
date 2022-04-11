@@ -3,21 +3,25 @@ package com.bonshabitos.utils;
 import java.util.List;
 
 import com.bonshabitos.entities.Person;
+import com.bonshabitos.entities.Survey;
 import com.bonshabitos.entities.User;
 import com.bonshabitos.entities.goodhabits.GoodHabit;
 
 public class Screen {
 
-	public static void printSurveyResult(String title, List<Person> participants) {
+	public static void printSurveyResult(String title, Survey survey) {
 		
 		splitSign("=", 80);
 		System.out.printf(Color.ANSI_CYAN + "%40s" + Color.ANSI_RESET, title.toUpperCase());
 		System.out.printf("%n%-20s %20s %35s", "NOME", "IDADE", "PONTUAÇÃO");
 		splitSign("=", 80);
-		for (Person participant : participants) {
+		for (Person participant : survey.getParticipants()) {
 			System.out.printf("%-20s %20s %35s%n", participant.extractFirstName(), participant.getAge(),
 					participant.getScore());
 		}
+		System.out.printf("TOTAL DE PARTICIPANTES: %s", survey.getNumberOfParticipants());
+		System.out.printf("%nMÉDIA DE IDADE: %.2f", survey.getAverageAge());
+		System.out.printf("%nTOTAL DE PONTOS: %d", survey.getTotalScore());
 		splitSign("=", 80);
 	}
 

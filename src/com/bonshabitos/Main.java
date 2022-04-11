@@ -90,15 +90,15 @@ public class Main {
 			switch (option) {
 			case 1:
 				participants = survey.getParticipants();
-				Screen.printSurveyResult("padrão", participants);
+				Screen.printSurveyResult("padrão", survey);
 				break;
 			case 2:
 				participants = survey.sortPeopleByParameter(new PersonByAgeComparator());
-				Screen.printSurveyResult("ordenado por idade", participants);
+				Screen.printSurveyResult("ordenado por idade", survey);
 				break;
 			case 3:
 				participants = survey.sortPeopleByParameter(new PersonByScoreComparator());
-				Screen.printSurveyResult("ordenado por pontuação", participants);
+				Screen.printSurveyResult("ordenado por pontuação", survey);
 				break;
 			default:
 				System.out.println("Valor inválido");
@@ -172,11 +172,24 @@ public class Main {
 		goodHabits.add(GoodHabitFactory.createGoodHabitConsumoConsciente());
 
 		Screen.printGoodHabitsAttitudesList(goodHabits);
-
 		System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
-		int choice = sc.nextInt();
+		int choice = 0;
+		try {				
+			choice = sc.nextInt();
+		} catch(InputMismatchException e) {
+			System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
+			sc.nextLine();
+		}
 
 		while (choice != -1) {
+			if (choice > 0 && choice <= 9) {
+				System.out.println("AQUI");
+				p1.setScore(p1.getScore() + 1);
+			}
+			
+			else {
+				System.out.println("Por favor, digite apenas valores entre 1 e 9.");
+			}
 
 			if (choice > 0 && choice <= 3) {
 				GoodHabit gh = goodHabits.get(0);
@@ -238,10 +251,13 @@ public class Main {
 				}
 			}
 
-			p1.setScore(p1.getScore() + 1);
-
 			System.out.println("Tem mais algum? [-1 PARA ENCERRAR]: ");
-			choice = sc.nextInt();
+			try {				
+				choice = sc.nextInt();
+			} catch(InputMismatchException e) {
+				System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
+				sc.nextLine();
+			}
 		}
 		Screen.splitSign("-", 40);
 		Screen.printUserGoodHabitsStatus(p1);
