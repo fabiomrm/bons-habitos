@@ -2,7 +2,7 @@ package com.bonshabitos.enums;
 
 public enum Gender {
 
-	MALE_CISGENDER(1), FEMALE_CISGENDER(2), MALE_TRANSGENDER(3), FEMALE_TRANSGENDER(4), NON_BINARY(5), OTHERS(6);
+	MALE_CISGENDER(1), MALE_TRANSGENDER(2), FEMALE_CISGENDER(3), FEMALE_TRANSGENDER(4), NON_BINARY(5), OTHERS(6);
 
 	private int value;
 
@@ -23,9 +23,9 @@ public enum Gender {
 		case 1:
 			return Gender.MALE_CISGENDER;
 		case 2:
-			return Gender.FEMALE_CISGENDER;
-		case 3:
 			return Gender.MALE_TRANSGENDER;
+		case 3:
+			return Gender.FEMALE_CISGENDER;
 		case 4:
 			return Gender.FEMALE_TRANSGENDER;
 		case 5:

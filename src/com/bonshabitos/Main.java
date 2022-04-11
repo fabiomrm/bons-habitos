@@ -67,8 +67,9 @@ public class Main {
 				init(sc, p);
 			} while (askToRepeat(sc) == 1);
 		}
-
+		
 		handleMenuRequests(sc, survey);
+		
 		try {
 			survey.generateSurveyFile();
 			System.out.println("Arquivo gerado com sucesso!");
@@ -76,7 +77,6 @@ public class Main {
 			System.out.println("Houve um problema para gerar seu arquivo de pesquisa!");
 			e.printStackTrace();
 		}
-
 		sc.close();
 	}
 
@@ -102,7 +102,9 @@ public class Main {
 				Screen.printSurveyResult("ordenado por pontuação", survey);
 				break;
 			default:
-				System.out.println("Valor inválido");
+				if (option != -1) {
+					System.out.println("Valor inválido");
+				}
 			}
 		} while (option > 0);
 	}
