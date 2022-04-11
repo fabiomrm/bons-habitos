@@ -64,7 +64,7 @@ public class Survey {
 	}
 
 	public void generateSurveyFile() throws IOException {
-		String endPath = PATH + title.trim().toLowerCase() + ".txt";
+		String endPath = PATH + "\\" + title.replaceAll(" ", "").toLowerCase() + ".txt";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(endPath, true));
 
 		bw.write(title.toUpperCase());

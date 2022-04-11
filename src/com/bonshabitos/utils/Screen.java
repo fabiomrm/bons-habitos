@@ -26,10 +26,13 @@ public class Screen {
 	}
 
 	public static void printSurveyResultMenu() {
-		System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
+		splitSign("=", 80);
+		System.out.print("MENU DE EXIBIÇÃO DOS RESULTADOS");
+	
 		String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
 		for (String opcao : opcoes) {
-			System.out.println(opcao);
+			splitSign("=", 80);
+			System.out.print(opcao);
 		}
 	}
 
@@ -76,13 +79,12 @@ public class Screen {
 	}
 
 	public static void printPresentation() {
-		System.out.println("BONS HÁBITOS");
-		System.out.println("Olá! Seja bem vinde ao projeto BONS HÁBITOS!");
-		System.out.println("Nosso objetivo é mostrar como seus atos diários impactam positivamente o meu ambiente");
+		System.out.println("Olá! Seja bem vinde à nossa pesquisa sobre atitudes!");
+		System.out.println("Nosso objetivo é mapear que atitudes você tem que impactam positivamente o meio ambiente");
 		System.out.println(
 				"Ah! E de quebra, a gente vai te dar algumas sugestões pra continuar nessa pegada sustentável");
 		System.out.println();
-		System.out.println("E ai? Bora tirar teu EXTRATO DE BONS HÁBITOS? ");
+		System.out.println("E ai? Quer ver como você se sai?");
 		System.out.println("1- Simbora!");
 		System.out.println("2- Tô fora...");
 	}
@@ -92,7 +94,6 @@ public class Screen {
 		System.out.println("Vai funcionar assim: ");
 		System.out.println("Nós vamos te mostrar uma lista de hábitos;");
 		System.out.println("Dentre as opções, tu vai escolher quais tu pratica;");
-		System.out.println("Pra cada uma delas, a gente vai mostrar um pouco sobre e te dar mais dicas;");
 		System.out.println("No final, a gente vai falar emitir teu EXTRATO DE BONS HÁBITOS!");
 		splitSign("-", 40);
 	}

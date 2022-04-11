@@ -84,4 +84,8 @@ public abstract class User {
 				.get(0);
 	}
 
+	public int findAttitude(GoodHabit gh, String attitude) {
+		return findGoodHabit(gh, gh.getTheme()).getAttitudes().indexOf(attitude);
+	}
+
 }

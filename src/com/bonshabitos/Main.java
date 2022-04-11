@@ -82,10 +82,11 @@ public class Main {
 
 	public static void handleMenuRequests(Scanner sc, Survey survey) {
 		int option = 0;
-		List<Person> participants;
+
 		do {
 			Screen.printSurveyResultMenu();
-			System.out.println("O que você deseja?");
+			System.out.print("\nO que você deseja?[-1 PARA ENCERRAR] ");
+			List<Person> participants;
 			option = sc.nextInt();
 			switch (option) {
 			case 1:
@@ -174,7 +175,6 @@ public class Main {
 		Screen.printGoodHabitsAttitudesList(goodHabits);
 
 		int choice = 0;
-
 		do {
 			try {
 				System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
@@ -185,14 +185,6 @@ public class Main {
 				choice = 0;
 			}
 
-			if (choice > 0 && choice <= 9) {
-				System.out.println(choice);
-				System.out.println("AQUI");
-				p1.setScore(p1.getScore() + 1);
-			} else if(choice != -1){
-				System.out.println("Valor inválido!");
-			}
-
 			if (choice > 0 && choice <= 3) {
 				GoodHabit gh = goodHabits.get(0);
 				String attitude = gh.getAttitudes().get(choice - 1);
@@ -201,19 +193,20 @@ public class Main {
 				if (!p1.hasGoodHabit(gh)) {
 					GoodHabit userGoodHabit = new FoodHabit();
 					userGoodHabit.getAttitudes().add(attitude);
+					p1.setScore(p1.getScore() + 1);
 
 					for (String suggestion : suggestions) {
 						userGoodHabit.getSuggestions().add(suggestion);
 					}
-
 					p1.getGoodHabits().add(userGoodHabit);
 				} else {
 					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
-					userGoodHabit.getAttitudes().add(attitude);
+					if (p1.findAttitude(userGoodHabit, attitude) == -1) {
+						userGoodHabit.getAttitudes().add(attitude);
+						p1.setScore(p1.getScore() + 1);
+					}
 				}
-			}
-
-			else if (choice > 3 && choice <= 6) {
+			} else if (choice > 3 && choice <= 6) {
 				GoodHabit gh = goodHabits.get(1);
 				String attitude = gh.getAttitudes().get(choice - 4);
 				List<String> suggestions = gh.getSuggestions();
@@ -221,6 +214,7 @@ public class Main {
 				if (!p1.hasGoodHabit(gh)) {
 					GoodHabit userGoodHabit = new CircularEconomyHabit();
 					userGoodHabit.getAttitudes().add(attitude);
+					p1.setScore(p1.getScore() + 1);
 
 					for (String suggestion : suggestions) {
 						userGoodHabit.getSuggestions().add(suggestion);
@@ -229,11 +223,12 @@ public class Main {
 					p1.getGoodHabits().add(userGoodHabit);
 				} else {
 					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
-					userGoodHabit.getAttitudes().add(attitude);
+					if (p1.findAttitude(userGoodHabit, attitude) == -1) {
+						userGoodHabit.getAttitudes().add(attitude);
+						p1.setScore(p1.getScore() + 1);
+					}
 				}
-			}
-
-			else if (choice > 6 && choice <= 9) {
+			} else if (choice > 6 && choice <= 9) {
 				GoodHabit gh = goodHabits.get(2);
 				String attitude = gh.getAttitudes().get(choice - 7);
 				List<String> suggestions = gh.getSuggestions();
@@ -241,6 +236,7 @@ public class Main {
 				if (!p1.hasGoodHabit(gh)) {
 					GoodHabit userGoodHabit = new ConsciousConsumptionHabit();
 					userGoodHabit.getAttitudes().add(attitude);
+					p1.setScore(p1.getScore() + 1);
 
 					for (String suggestion : suggestions) {
 						userGoodHabit.getSuggestions().add(suggestion);
@@ -249,7 +245,10 @@ public class Main {
 					p1.getGoodHabits().add(userGoodHabit);
 				} else {
 					GoodHabit userGoodHabit = p1.findGoodHabit(gh, gh.getTheme());
-					userGoodHabit.getAttitudes().add(attitude);
+					if (p1.findAttitude(userGoodHabit, attitude) == -1) {
+						userGoodHabit.getAttitudes().add(attitude);
+						p1.setScore(p1.getScore() + 1);
+					}
 				}
 			}
 

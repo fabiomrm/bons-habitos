@@ -6,7 +6,7 @@ import java.util.Objects;
 
 import com.bonshabitos.enums.Theme;
 
-public class GoodHabit {
+public abstract class GoodHabit {
 
 	private Theme theme;
 	private List<String> attitudes = new ArrayList<>();
