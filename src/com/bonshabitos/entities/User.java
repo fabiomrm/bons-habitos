@@ -52,6 +52,14 @@ public abstract class User {
 	public void setScore(int score) {
 		this.score = score;
 	}
+	
+	public String extractFirstName() {
+		if(name.indexOf(" ") != -1) {			
+			return name.substring(0, name.indexOf(" "));
+		}
+		
+		return name;
+	}
 
 	public boolean hasGoodHabit(GoodHabit goodHabit) {
 		for (int i = 0; i < getGoodHabits().size(); i++) {

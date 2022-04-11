@@ -1,16 +1,13 @@
 package com.bonshabitos.services;
 
-import com.bonshabitos.interfaces.Validator;
-
 public class Test {
 
 	public static void main(String[] args) {
 
-		String email = "marcos@gmail.com";
-
-		Validator emailValidator = new EmailValidator();
-
-		System.out.println(emailValidator.validate(email));
+		String name = "Fábio Marcone Rodrigues Monteiro";
+		
+		name.substring(0, name.indexOf(" "));
+		System.out.println(name.subSequence(0, name.indexOf(" ")));
 
 	}
 

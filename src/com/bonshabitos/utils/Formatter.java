@@ -19,6 +19,6 @@ public class Formatter {
 	}
 
 	public static String formatCpf(String cpf) {
-		return cpf.replaceAll("[^0-9]", ""); 
+		return cpf.replaceAll("[^0-9]", "");
 	}
 }
