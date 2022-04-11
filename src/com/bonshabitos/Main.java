@@ -134,6 +134,8 @@ public class Main {
 			cpf = sc.nextLine();
 		}
 
+		cpf = Formatter.formatCpf(cpf);
+
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
 

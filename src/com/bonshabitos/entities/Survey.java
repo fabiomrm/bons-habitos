@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.bonshabitos.utils.Formatter;
+
 public class Survey {
 
 	public static final String PATH = "C:\\java\\projeto1testes";
@@ -73,7 +75,7 @@ public class Survey {
 		bw.write("Média de idade das pessoas participantes: " + getAverageAge());
 		bw.newLine();
 		for (Person participant : participants) {
-			bw.write(participant.extractFirstName() + "," + participant.getCpf() + "," + participant.getAge() + ","
+			bw.write(participant.extractFirstName() + "," + Formatter.formatCpf(participant.getCpf()) + "," + participant.getAge() + ","
 					+ participant.getGender());
 			bw.newLine();
 		}
