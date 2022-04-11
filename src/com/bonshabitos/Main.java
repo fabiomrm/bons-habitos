@@ -189,7 +189,7 @@ public class Main {
 				System.out.println(choice);
 				System.out.println("AQUI");
 				p1.setScore(p1.getScore() + 1);
-			} else {
+			} else if(choice != -1){
 				System.out.println("Valor inválido!");
 			}
 
