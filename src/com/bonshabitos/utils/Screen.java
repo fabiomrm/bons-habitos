@@ -9,12 +9,13 @@ import com.bonshabitos.entities.goodhabits.GoodHabit;
 public class Screen {
 
 	public static void printSurveyResult(String title, List<Person> participants) {
+		
 		splitSign("=", 80);
-		System.out.printf("%40s", title.toUpperCase());
-		System.out.printf("%n%-20s %20s %40s", "NOME", "IDADE", "PONTUAÇÃO");
+		System.out.printf(Color.ANSI_CYAN + "%40s" + Color.ANSI_RESET, title.toUpperCase());
+		System.out.printf("%n%-20s %20s %35s", "NOME", "IDADE", "PONTUAÇÃO");
 		splitSign("=", 80);
 		for (Person participant : participants) {
-			System.out.printf("%-20s %20s %40s%n", participant.extractFirstName(), participant.getAge(),
+			System.out.printf("%-20s %20s %35s%n", participant.extractFirstName(), participant.getAge(),
 					participant.getScore());
 		}
 		splitSign("=", 80);
