@@ -28,7 +28,6 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Validator cpfValidator = new CpfValidator();
 		Validator emailValidator = new EmailValidator();
-		// Aqui vocês vão colocar Validator emailValidator = new emailValidator();
 
 		Survey survey = new Survey("Atitudes das Pessoas");
 
@@ -123,11 +122,13 @@ public class Main {
 			cpf = sc.nextLine();
 		}
 
-		// Aqui vem a lógica da validação de email (ver a de cima - cpf)
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
+		while (!validators[1].validate(email)) {
+			System.out.println("Email inválido! Digite novamente: ");
+			email = sc.nextLine();
+		}
 
-		// AQUI VEM A LÓGICA DE NÃO ACEITAR NADA QUE NÃO SEJA DE 1 A 6
 		System.out.println("Qual o seu gênero? ");
 		System.out.println("1- HOMEM-CIS");
 		System.out.println("2- HOMEM-TRANS");

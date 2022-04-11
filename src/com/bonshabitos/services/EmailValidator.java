@@ -17,12 +17,18 @@ public class EmailValidator implements Validator {
 		}
 		String user = identifier.substring(0, identifier.indexOf("@"));
 		if (user.length() <= 0) {
+
 			return false;
 		}
 
 		String domain = identifier.substring(identifier.indexOf("@") + 1);
+		
+		if(domain.indexOf(".") == 0) {
+			return false;
+		}
 
-		if (domain.lastIndexOf(".") >= domain.length() - 1 || domain.length() < 3) {
+		if (domain.lastIndexOf(".") >= domain.length() - 1 || domain.substring(0, domain.indexOf(".")).length() < 3) {
+
 			return false;
 		}
 
