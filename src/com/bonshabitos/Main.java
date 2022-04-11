@@ -16,6 +16,7 @@ import com.bonshabitos.entities.goodhabits.GoodHabit;
 import com.bonshabitos.enums.Gender;
 import com.bonshabitos.interfaces.Validator;
 import com.bonshabitos.services.CpfValidator;
+import com.bonshabitos.services.EmailValidator;
 import com.bonshabitos.utils.Formatter;
 import com.bonshabitos.utils.GoodHabitFactory;
 import com.bonshabitos.utils.Screen;
@@ -26,6 +27,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Validator cpfValidator = new CpfValidator();
+		Validator emailValidator = new EmailValidator();
 		// Aqui vocês vão colocar Validator emailValidator = new emailValidator();
 
 		Survey survey = new Survey("Atitudes das Pessoas");
@@ -48,9 +50,7 @@ public class Main {
 		}
 		sc.nextLine();
 
-		// AQUI VOCÊS VÃO MUDAR o método getUserData pra receber também um
-		// emailValidator getUserData(sc, cpfValidator, emailValidator)
-		Person p1 = getUserData(sc, cpfValidator);
+		Person p1 = getUserData(sc, cpfValidator, emailValidator);
 		survey.getParticipants().add(p1);
 
 		init(sc, p1);
@@ -103,9 +103,8 @@ public class Main {
 		return sc.nextInt();
 	}
 
-	// Com o validator email, esse método vai virar: getUserData(Scanner sc,
-	// Validator validator, Validator validator2)
-	public static Person getUserData(Scanner sc, Validator validator) {
+	public static Person getUserData(Scanner sc, Validator... validators) {
+
 		System.out.print("Digite seu nome: ");
 		String name = sc.nextLine();
 
@@ -119,7 +118,7 @@ public class Main {
 		System.out.println("Entre com o seu CPF: ");
 		String cpf = sc.nextLine();
 
-		while (!validator.validate(cpf)) {
+		while (!validators[0].validate(cpf)) {
 			System.out.println("CPF inválido! Digite novamente: ");
 			cpf = sc.nextLine();
 		}
