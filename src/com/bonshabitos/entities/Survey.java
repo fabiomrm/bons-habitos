@@ -44,6 +44,15 @@ public class Survey {
 		return participants;
 	}
 
+	public int getNumberOfParticipants() {
+		return participants.size();
+	}
+
+	public double getAverageAge() {
+		return participants.stream().mapToDouble(x -> x.getAge()).reduce(0,
+				(sum, x) -> sum + x / getNumberOfParticipants());
+	}
+
 	public List<Person> sortPeopleByParameter(Comparator<Person> comparator) {
 		Collections.sort(participants, comparator);
 
@@ -53,16 +62,17 @@ public class Survey {
 	public void generateSurveyFile() throws IOException {
 		String endPath = PATH + title.trim().toLowerCase() + ".txt";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(endPath, true));
+
 		bw.write(title.toUpperCase());
 		bw.newLine();
 		bw.write("Author: " + author.getName());
-
+		bw.newLine();
 		for (Person participant : participants) {
 			bw.write(participant.extractFirstName() + "," + participant.getCpf() + "," + participant.getAge() + ","
 					+ participant.getGender());
 			bw.newLine();
 		}
-		
+
 		bw.close();
 
 	}
