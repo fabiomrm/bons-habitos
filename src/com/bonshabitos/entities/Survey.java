@@ -1,6 +1,7 @@
 package com.bonshabitos.entities;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,10 +68,6 @@ public class Survey {
 		String endPath = PATH + "\\" + title.replaceAll(" ", "").toLowerCase() + ".txt";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(endPath, true));
 
-		bw.write(title.toUpperCase());
-		bw.newLine();
-		bw.write("Criadora: " + author.getName());
-		bw.newLine();
 		bw.write("Nº Participantes: " + getNumberOfParticipants());
 		bw.newLine();
 		bw.write("Média de idade das pessoas participantes: " + getAverageAge());
@@ -80,6 +77,7 @@ public class Survey {
 					+ participant.getGender());
 			bw.newLine();
 		}
+		bw.write("===================");
 
 		bw.close();
 
