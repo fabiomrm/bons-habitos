@@ -172,23 +172,25 @@ public class Main {
 		goodHabits.add(GoodHabitFactory.createGoodHabitConsumoConsciente());
 
 		Screen.printGoodHabitsAttitudesList(goodHabits);
-		System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
-		int choice = 0;
-		try {				
-			choice = sc.nextInt();
-		} catch(InputMismatchException e) {
-			System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
-			sc.nextLine();
-		}
 
-		while (choice != -1) {
+		int choice = 0;
+
+		do {
+			try {
+				System.out.println("E aí, tu pratica alguma dessas coisas? [Aperta -1 para ENCERRAR]: ");
+				choice = sc.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
+				sc.nextLine();
+				choice = 0;
+			}
+
 			if (choice > 0 && choice <= 9) {
+				System.out.println(choice);
 				System.out.println("AQUI");
 				p1.setScore(p1.getScore() + 1);
-			}
-			
-			else {
-				System.out.println("Por favor, digite apenas valores entre 1 e 9.");
+			} else {
+				System.out.println("Valor inválido!");
 			}
 
 			if (choice > 0 && choice <= 3) {
@@ -251,14 +253,7 @@ public class Main {
 				}
 			}
 
-			System.out.println("Tem mais algum? [-1 PARA ENCERRAR]: ");
-			try {				
-				choice = sc.nextInt();
-			} catch(InputMismatchException e) {
-				System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
-				sc.nextLine();
-			}
-		}
+		} while (choice != -1);
 		Screen.splitSign("-", 40);
 		Screen.printUserGoodHabitsStatus(p1);
 	}

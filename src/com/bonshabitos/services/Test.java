@@ -1,19 +1,27 @@
 package com.bonshabitos.services;
 
-import com.bonshabitos.entities.Person;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Test {
 
 	public static void main(String[] args) {
 
-		Person fabio = new Person();
-		Person joana = new Person();
-		Person carla = new Person();
-		
-		System.out.println(fabio.getId());
-		System.out.println(joana.getId());
-		System.out.println(carla.getId());
-		
+		int choice = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite um valor: ");
+
+		try {
+
+			choice = sc.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Valor inválido! Apenas algarismos entre 1 e 9.");
+			System.out.println(choice > 9);
+		}
+		if (choice > 9) {
+			System.out.println(choice);
+			System.out.println("Aqui");
+		}
 
 	}
 
