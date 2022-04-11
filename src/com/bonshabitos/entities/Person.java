@@ -59,7 +59,6 @@ public class Person extends User {
 		case OTHERS:
 			return "outros";
 		}
-		
 		return "Não informado";
 	}
 

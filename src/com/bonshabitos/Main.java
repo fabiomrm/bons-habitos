@@ -53,17 +53,20 @@ public class Main {
 		survey.getParticipants().add(p1);
 
 		init(sc, p1);
+
 		int res = askToRepeat(sc);
 		if (res == 1) {
 			do {
 				sc.nextLine();
-				Person p = getUserData(sc, cpfValidator);
+				Person p = getUserData(sc, cpfValidator, emailValidator);
 				survey.getParticipants().add(p);
 				init(sc, p);
 			} while (askToRepeat(sc) == 1);
 		}
 
 		handleMenuRequests(sc, survey);
+		
+		
 
 		sc.close();
 
@@ -124,19 +127,23 @@ public class Main {
 
 		System.out.println("Entre com o seu email: ");
 		String email = sc.nextLine();
+
 		while (!validators[1].validate(email)) {
 			System.out.println("Email inválido! Digite novamente: ");
 			email = sc.nextLine();
 		}
 
-		System.out.println("Qual o seu gênero? ");
-		System.out.println("1- HOMEM-CIS");
-		System.out.println("2- HOMEM-TRANS");
-		System.out.println("3- MULHER-CIS");
-		System.out.println("4- MULHER-TRANS");
-		System.out.println("5- NÃO-BINÁRIOS");
-		System.out.println("6- OUTROS");
-		int gender = sc.nextInt();
+		Screen.printGenderOptions();
+		int gender = 0;
+		while (gender <= 0 || gender > 6) {
+			try {
+				System.out.println("Como você se identifica? ");
+				gender = sc.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Tipo de valor incorreto. Favor selecionar entre as opções de 1 a 6!");
+				sc.nextLine();
+			}
+		}
 
 		return new Person(name, age, email, cpf, Gender.valueOf(gender));
 	}

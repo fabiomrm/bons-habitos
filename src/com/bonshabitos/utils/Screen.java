@@ -22,7 +22,6 @@ public class Screen {
 	}
 
 	public static void printSurveyResultMenu() {
-		// compare (implementar na entidade Person)
 		System.out.println("MENU DE EXIBIÇÃO DOS RESULTADOS");
 		String[] opcoes = { "1 - Exibir participantes", "2 - Ordenar por idade", "3 - Ordenar por pontuação" };
 		for (String opcao : opcoes) {
@@ -50,11 +49,15 @@ public class Screen {
 
 	}
 
-	/*
-	 * Nesse método a gente recebe uma LISTA com OBJETOS da CLASSE GoodHabit e
-	 * percorre com um LOOP FOR. Como cada OBJETO GoodHabit possui uma LISTA DE
-	 * ATITUDES, eu percorro essa lista e IMPRIMO cada valor da LISTA DE ATITUDES.
-	 */
+	public static void printGenderOptions() {
+		System.out.println("1- HOMEM-CIS");
+		System.out.println("2- HOMEM-TRANS");
+		System.out.println("3- MULHER-CIS");
+		System.out.println("4- MULHER-TRANS");
+		System.out.println("5- NÃO-BINÁRIOS");
+		System.out.println("6- OUTROS");
+	}
+
 	public static void printGoodHabitsAttitudesList(List<GoodHabit> goodHabits) {
 		System.out.println("LISTA DE BONS HÁBITOS: ");
 
