@@ -9,6 +9,7 @@ import com.bonshabitos.enums.Theme;
 
 public abstract class User {
 
+	private Long id;
 	private String name;
 	private String email;
 	private int score = 0;
@@ -19,6 +20,14 @@ public abstract class User {
 
 	public User(String name) {
 		this.name = name;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -52,12 +61,12 @@ public abstract class User {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	
+
 	public String extractFirstName() {
-		if(name.indexOf(" ") != -1) {			
+		if (name.indexOf(" ") != -1) {
 			return name.substring(0, name.indexOf(" "));
 		}
-		
+
 		return name;
 	}
 

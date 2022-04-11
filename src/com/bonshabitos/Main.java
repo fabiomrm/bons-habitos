@@ -29,7 +29,9 @@ public class Main {
 		Validator cpfValidator = new CpfValidator();
 		Validator emailValidator = new EmailValidator();
 
-		Survey survey = new Survey("Atitudes das Pessoas");
+		Person author = new Person("Carla Siqueira", 32, "carla.siqueira@gmail.com", "11270258486",
+				Gender.FEMALE_TRANSGENDER);
+		Survey survey = new Survey("Boas Atitudes", author);
 
 		Screen.printPresentation();
 
@@ -65,18 +67,15 @@ public class Main {
 		}
 
 		handleMenuRequests(sc, survey);
-		
-		
 
 		sc.close();
-
 	}
 
 	public static void handleMenuRequests(Scanner sc, Survey survey) {
-		Screen.printSurveyResultMenu();
 		int option = 0;
+		List<Person> participants;
 		do {
-			List<Person> participants;
+			Screen.printSurveyResultMenu();
 			System.out.println("O que você deseja?");
 			option = sc.nextInt();
 			switch (option) {

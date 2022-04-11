@@ -9,9 +9,11 @@ public class Person extends User {
 	private Gender gender;
 
 	public Person() {
+		setId(getId() + 1);
 	}
 
 	public Person(String name, int age, String email, String cpf, Gender gender) {
+		setId(getId() + 1);
 		super.setName(name);
 		this.age = age;
 		super.setEmail(email);
@@ -42,10 +44,10 @@ public class Person extends User {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	
+
 	private String translateGender() {
-		switch(gender) {
-		
+		switch (gender) {
+
 		case MALE_CISGENDER:
 			return "Homem cis";
 		case MALE_TRANSGENDER:

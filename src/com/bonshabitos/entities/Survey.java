@@ -8,12 +8,13 @@ import java.util.List;
 public class Survey {
 
 	private String title;
+	private Person author;
 	private List<Person> participants = new ArrayList<>();
 
 	public Survey() {
 	}
 
-	public Survey(String title) {
+	public Survey(String title, Person author) {
 		this.title = title;
 	}
 
